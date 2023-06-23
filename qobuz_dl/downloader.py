@@ -94,6 +94,8 @@ class Download:
         album_attr = self._get_album_attr(
             meta, album_title, file_format, bit_depth, sampling_rate
         )
+        album_attr["album"] = album_attr["album"].replace("/","-")
+        album_attr["artist"] = album_attr["artist"].replace("/","-")
         folder_format, track_format = _clean_format_str(
             self.folder_format, self.track_format, file_format
         )
@@ -156,6 +158,8 @@ class Download:
             track_attr = self._get_track_attr(
                 meta, track_title, bit_depth, sampling_rate
             )
+            track_attr["album"] = track_attr["album"].replace("/","-")
+            track_attr["artist"] = track_attr["artist"].replace("/","-")
             sanitized_title = sanitize_filepath(folder_format.format(**track_attr))
 
             dirn = os.path.join(self.path, sanitized_title)
