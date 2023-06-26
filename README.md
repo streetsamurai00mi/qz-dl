@@ -5,6 +5,8 @@ Search, explore and download Lossless and Hi-Res music from [Qobuz](https://www.
 ## This Fork
 ### Changes
 * Support for token-based authentication
+* Change password input method to `getpass`
+* Remove forbidden character `/` (forward slash) from title and artist in download path
 * Some minor changes
 ### Install this folk
 ```
