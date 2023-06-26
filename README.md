@@ -2,6 +2,15 @@
 Search, explore and download Lossless and Hi-Res music from [Qobuz](https://www.qobuz.com/).
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VZWSWVGZGJRMU&source=url)
 
+## This Fork
+### Changes
+* Support for token-based authentication
+* Some minor changes
+### Install this folk
+```
+pip install https://github.com/streetsamurai00mi/qz-dl/archive/dev.tar.gz
+```
+
 ## Features
 
 * Download FLAC and MP3 files from Qobuz
@@ -120,6 +129,10 @@ qobuz-dl lucky jay z story of oj --type track --no-cover
 Run `qobuz-dl lucky --help` for more info.
 
 ### Other
+Show your configuration
+```
+qobuz-dl -sc
+```
 Reset your config file
 ```
 qobuz-dl -r
@@ -138,6 +151,7 @@ optional arguments:
   -h, --help      show this help message and exit
   -r, --reset     create/reset config file
   -p, --purge     purge/delete downloaded-IDs database
+  -sc, --show-config  show configuration
 
 commands:
   run qobuz-dl <command> --help for more info
