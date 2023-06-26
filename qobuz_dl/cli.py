@@ -41,15 +41,15 @@ def _reset_config(config_file):
         input(
             "Download quality (5, 6, 7, 27) "
             "[320, LOSSLESS, 24B <96KHZ, 24B >96KHZ]"
-            "\n(leave empty for default '6')\n- "
+            "\n(leave empty for default '27')\n- "
         )
-        or "6"
+        or "27"
     )
     config["DEFAULT"]["default_limit"] = "20"
     config["DEFAULT"]["no_m3u"] = "false"
     config["DEFAULT"]["albums_only"] = "false"
     config["DEFAULT"]["no_fallback"] = "false"
-    config["DEFAULT"]["og_cover"] = "false"
+    config["DEFAULT"]["og_cover"] = "true"
     config["DEFAULT"]["embed_art"] = "false"
     config["DEFAULT"]["no_cover"] = "false"
     config["DEFAULT"]["no_database"] = "false"
