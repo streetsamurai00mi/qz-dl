@@ -4,6 +4,7 @@ import logging
 import glob
 import os
 import sys
+from getpass import getpass
 
 from qobuz_dl.bundle import Bundle
 from qobuz_dl.color import GREEN, RED, YELLOW
@@ -31,7 +32,7 @@ def _reset_config(config_file):
     config = configparser.ConfigParser()
     email_or_userid = input("Enter your email or user_id:\n- ")
     config["DEFAULT"]["email_or_userid"] = email_or_userid
-    password_or_token = input("Enter your password or token\n- ")
+    password_or_token = getpass(prompt = "Enter your password or token\n- ")
     config["DEFAULT"]["password_or_token"] = hashlib.md5(password_or_token.encode("utf-8")).hexdigest() if '@' in email_or_userid else password_or_token
     config["DEFAULT"]["default_folder"] = (
         input("Folder for downloads (leave empty for default 'Qobuz Downloads')\n- ")
