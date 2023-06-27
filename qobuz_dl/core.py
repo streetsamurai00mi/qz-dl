@@ -107,7 +107,7 @@ class QobuzDL:
         except (requests.exceptions.RequestException, NonStreamable) as e:
             logger.error(f"{RED}Error getting release: {e}. Skipping...")
 
-    def handle_url(self, url):
+    def handle_url(self, url, url_type: str=""):
         possibles = {
             "playlist": {
                 "func": self.client.get_plist_meta,
@@ -125,7 +125,10 @@ class QobuzDL:
             "track": {"album": False, "func": None, "iterable_key": None},
         }
         try:
-            url_type, item_id = get_url_info(url)
+            if url_type:
+                item_id = url
+            else:
+                url_type, item_id = get_url_info(url)
             type_dict = possibles[url_type]
         except (KeyError, IndexError):
             logger.info(
@@ -171,13 +174,21 @@ class QobuzDL:
         if not urls or not isinstance(urls, list):
             logger.info(f"{OFF}Nothing to download")
             return
+        if urls[0] in ["album", "track", "artist", "label", "playlist"]:
+            url_type = urls[0]
+            urls.pop(0)
+        elif urls[-1] in ["album", "track", "artist", "label"]:
+            url_type = urls[-1]
+            urls.pop(-1)
+        else:
+            url_type = ""
         for url in urls:
             if "last.fm" in url:
                 self.download_lastfm_pl(url)
             elif os.path.isfile(url):
                 self.download_from_txt_file(url)
             else:
-                self.handle_url(url)
+                self.handle_url(url, url_type)
 
     def download_from_txt_file(self, txt_file):
         with open(txt_file, "r") as txt:
