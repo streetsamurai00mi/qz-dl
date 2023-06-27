@@ -7,6 +7,7 @@ Search, explore and download Lossless and Hi-Res music from [Qobuz](https://www.
 * Support for token-based authentication
 * Change password input method to `getpass`
 * Remove forbidden character `/` (forward slash) from title and artist in download path
+* Download albums/tracks/artists/labels/playlists by id, ex: `qobuz-dl dl album l6lnrr76pxsta q3o4izc2s0d9a
 * Some minor changes
 ### Install this folk
 ```
