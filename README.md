@@ -12,6 +12,7 @@ Search, explore and download Lossless and Hi-Res music from [Qobuz](https://www.
 * Remove forbidden character `/` (forward slash) from title and artist in download path
 * Download albums/tracks/artists/labels/playlists by id, ex: `qzdl-dev dl album l6lnrr76pxsta q3o4izc2s0d9a`
 * Show your configuration: `qzdl-dev -sc`
+* Change package name
 * Some minor changes
 
 ### Install this folk

@@ -18,7 +18,7 @@ requirements = [
 
 setup(
     name="qobuz-dl-babymetaldev",
-    version="0.9.9.11.dev3",
+    version="0.9.9.11.dev4",
     author="babymetal",
     author_email="",
     description="The complete Lossless and Hi-Res music downloader for Qobuz",
