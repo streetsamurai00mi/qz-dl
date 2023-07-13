@@ -121,8 +121,8 @@ def main():
         email_or_userid = config["DEFAULT"]["email_or_userid"]
         password_or_token = config["DEFAULT"]["password_or_token"]
         default_folder = config["DEFAULT"]["default_folder"]
-        default_limit = config["DEFAULT"]["default_limit"]
-        default_quality = config["DEFAULT"]["default_quality"]
+        default_limit = config.getint("DEFAULT", "default_limit")
+        default_quality = config.getint("DEFAULT", "default_quality")
         no_m3u = config.getboolean("DEFAULT", "no_m3u")
         albums_only = config.getboolean("DEFAULT", "albums_only")
         no_fallback = config.getboolean("DEFAULT", "no_fallback")
