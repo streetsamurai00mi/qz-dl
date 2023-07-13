@@ -22,7 +22,7 @@ if os.name == "nt":
 else:
     OS_CONFIG = os.path.join(os.environ["HOME"], ".config")
 
-CONFIG_PATH = os.path.join(OS_CONFIG, "qobuz-dl")
+CONFIG_PATH = os.path.join(OS_CONFIG, "qzdl-dev")
 CONFIG_FILE = os.path.join(CONFIG_PATH, "config.ini")
 QOBUZ_DB = os.path.join(CONFIG_PATH, "qobuz_dl.db")
 
@@ -66,7 +66,7 @@ def _reset_config(config_file):
     logging.info(
         f"{GREEN}Config file updated. Edit more options in {config_file}"
         "\nso you don't have to call custom flags every time you run "
-        "a qobuz-dl command."
+        "a qzdl-dev command."
     )
 
 
@@ -146,7 +146,7 @@ def main():
         if not arguments.reset:
             sys.exit(
                 f"{RED}Your config file is corrupted: {error}! "
-                "Run 'qobuz-dl -r' to fix this."
+                "Run 'qzdl-dev -r' to fix this."
             )
 
     if arguments.reset:

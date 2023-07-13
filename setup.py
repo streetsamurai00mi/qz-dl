@@ -1,7 +1,5 @@
 from setuptools import setup, find_packages
 
-pkg_name = "qobuz-dl"
-
 
 def read_file(fname):
     with open(fname, "r") as f:
@@ -19,19 +17,20 @@ requirements = [
 ]
 
 setup(
-    name=pkg_name,
+    name="qobuz-dl-babymetaldev",
     version="0.9.9.11.dev2",
-    author="Vitiko",
-    author_email="vhnz98@gmail.com",
+    author="babymetal",
+    author_email="",
     description="The complete Lossless and Hi-Res music downloader for Qobuz",
     long_description=read_file("README.md"),
     long_description_content_type="text/markdown",
-    url="https://github.com/vitiko98/Qobuz-DL",
+    url="https://github.com/streetsamurai00mi/qz-dl/tree/dev",
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "qobuz-dl = qobuz_dl:main",
-            "qdl = qobuz_dl:main",
+            "qobuz-dl-babymetaldev = qobuz_dl:main",
+            "qzdl-dev = qobuz_dl:main",
+            "qzdl = qobuz_dl:main",
         ],
     },
     packages=find_packages(),

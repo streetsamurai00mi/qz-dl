@@ -7,11 +7,36 @@ Search, explore and download Lossless and Hi-Res music from [Qobuz](https://www.
 * Support for token-based authentication
 * Change password input method to `getpass`
 * Remove forbidden character `/` (forward slash) from title and artist in download path
-* Download albums/tracks/artists/labels/playlists by id, ex: `qobuz-dl dl album l6lnrr76pxsta q3o4izc2s0d9a
+* Download albums/tracks/artists/labels/playlists by id, ex: `qzdl-dev dl album l6lnrr76pxsta q3o4izc2s0d9a`
+* Show your configuration: `qzdl-dev -sc`
 * Some minor changes
+
 ### Install this folk
 ```
-pip install https://github.com/streetsamurai00mi/qz-dl/archive/dev.tar.gz
+pipx install https://github.com/streetsamurai00mi/qz-dl/archive/dev.tar.gz
+```
+
+### Usage
+```
+usage: qzdl-dev [-h] [-r] {fun,dl,lucky} ...
+
+The ultimate Qobuz music downloader.
+See usage examples on https://github.com/streetsamurai00mi/qz-dl/tree/dev
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -r, --reset     create/reset config file
+  -p, --purge     purge/delete downloaded-IDs database
+  -sc, --show-config  show configuration
+
+commands:
+  run qzdl-dev <command> --help for more info
+  (e.g. qzdl-dev fun --help)
+
+  {fun,dl,lucky}
+    fun           interactive mode
+    dl            input mode
+    lucky         lucky mode
 ```
 
 ## Features
@@ -132,9 +157,6 @@ qobuz-dl lucky jay z story of oj --type track --no-cover
 Run `qobuz-dl lucky --help` for more info.
 
 ### Other
-Show your configuration
-```
-qobuz-dl -sc
 ```
 Reset your config file
 ```
@@ -143,28 +165,6 @@ qobuz-dl -r
 
 By default, `qobuz-dl` will skip already downloaded items by ID with the message `This release ID ({item_id}) was already downloaded`. To avoid this check, add the flag `--no-db` at the end of a command. In extreme cases (e.g. lost collection), you can run `qobuz-dl -p` to completely reset the database.
 
-## Usage
-```
-usage: qobuz-dl [-h] [-r] {fun,dl,lucky} ...
-
-The ultimate Qobuz music downloader.
-See usage examples on https://github.com/vitiko98/qobuz-dl
-
-optional arguments:
-  -h, --help      show this help message and exit
-  -r, --reset     create/reset config file
-  -p, --purge     purge/delete downloaded-IDs database
-  -sc, --show-config  show configuration
-
-commands:
-  run qobuz-dl <command> --help for more info
-  (e.g. qobuz-dl fun --help)
-
-  {fun,dl,lucky}
-    fun           interactive mode
-    dl            input mode
-    lucky         lucky mode
-```
 
 ## Module usage 
 Using `qobuz-dl` as a module is really easy. Basically, the only thing you need is `QobuzDL` from `core`.

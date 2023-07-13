@@ -17,7 +17,7 @@ from qobuz_dl.exceptions import (
 )
 from qobuz_dl.color import GREEN, YELLOW
 
-RESET = "Reset your credentials with 'qobuz-dl -r'"
+RESET = "Reset your credentials with 'qzdl-dev -r'"
 
 logger = logging.getLogger(__name__)
 

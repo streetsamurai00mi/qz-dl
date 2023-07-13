@@ -133,10 +133,10 @@ def qobuz_dl_args(
     default_quality=6, default_limit=20, default_folder="Qobuz Downloads"
 ):
     parser = argparse.ArgumentParser(
-        prog="qobuz-dl",
+        prog="qzdl-dev",
         description=(
             "The ultimate Qobuz music downloader.\nSee usage"
-            " examples on https://github.com/vitiko98/qobuz-dl"
+            " examples on https://github.com/streetsamurai00mi/qz-dl/tree/dev"
         ),
         formatter_class=argparse.RawTextHelpFormatter,
     )
@@ -158,7 +158,7 @@ def qobuz_dl_args(
 
     subparsers = parser.add_subparsers(
         title="commands",
-        description="run qobuz-dl <command> --help for more info\n(e.g. qobuz-dl fun --help)",
+        description="run qzdl-dev <command> --help for more info\n(e.g. qzdl-dev fun --help)",
         dest="command",
     )
 
